@@ -1,11 +1,19 @@
 package entidades;
 
-public class Rank{
-	public String nomeRank;
-	public int pontuacaoMinima;
-	
-	public Rank(String nomeRank, int pontuacaoMinima) {
-		this.pontuacaoMinima = pontuacaoMinima;
-		this.nomeRank = nomeRank;
-	}
+public class Rank {
+
+    private int idRank;
+    private String nomeRank;
+    private int pontuacaoMinima;
+
+    public Rank(int idRank, String nomeRank, int pontuacaoMinima) {
+        this.idRank = idRank;
+        this.nomeRank = nomeRank;
+        this.pontuacaoMinima = pontuacaoMinima;
+    }
+
+    public String getNomeRank() {
+        return nomeRank;
+    }
+
 }

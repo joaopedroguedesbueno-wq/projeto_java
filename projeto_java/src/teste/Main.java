@@ -2,26 +2,36 @@ package teste;
 
 import entidades.Jogador;
 import entidades.Rank;
+import entidades.Jogo;
+import entidades.JogoJogador;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Rank rank1 = new Rank("Bronze", 67);
+        // criando um jogador
+        Jogador jogador1 = new Jogador(1, "Pedro", 18, null, "pedro@email.com");
 
-        Jogador jogador1 = new Jogador(
-            "Bruno",
-            18,
-            rank1,
-            "Bruninha@email.com",
-            "123"
+        // criando um jogo
+        Jogo jogo1 = new Jogo(1, "Minecraft", "Sandbox", "PC", "Mojang", 2011);
+
+        // criando um rank
+        Rank rank1 = new Rank(1, "Ouro", 3000);
+
+        // criando jogojogador
+        JogoJogador jogoJogador1 = new JogoJogador(
+                1,
+                jogo1,
+                jogador1,
+                rank1, 5000, 0
         );
 
-        System.out.println(
-            "Nome: " + jogador1.nome +
-            " | Rank: " + jogador1.rank.nomeRank +
-            " | Pontos: " + jogador1.rank.pontuacaoMinima
-        );
+        // mostrando informações
+        System.out.println("Jogador: " + jogador1.getNome());
+        System.out.println("Jogo: " + jogo1.getNome());
+        System.out.println("Pontuação: " + jogoJogador1.getPontuacao());
+        System.out.println("Nível: " + jogoJogador1.getNivel());
+        System.out.println("Rank: " + rank1.getNomeRank());
 
     }
 
